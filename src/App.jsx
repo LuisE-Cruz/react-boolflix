@@ -42,6 +42,7 @@ function App() {
                 <ul key={movie.id}>
                   <li>{movie.original_title}</li>
                   <li>{movie.title}</li>
+                  <li><img src={`https://image.tmdb.org/t/p/w342/${movie.poster_path} alt=${movie.original_title}`} /></li>
                   <li className={`fi fi-${movie.original_language === "en" ? "gb" : movie.original_language === "ja" ? "jp" : movie.original_language === "zh" ? "cn" : movie.original_language === "ko" ? "kr" : movie.original_language === "el" ? "gr" : movie.original_language}`}></li>
                   <li>{movie.vote_average}</li>
                 </ul>
@@ -53,6 +54,7 @@ function App() {
                 <ul key={series.id}>
                   <li>{series.original_name}</li>
                   <li>{series.name}</li>
+                  <li><img src={`https://image.tmdb.org/t/p/w342/${series.poster_path} alt=${series.original_title}`} /></li>
                   <li className={`fi fi-${series.original_language === "en" ? "gb" : series.original_language === "ja" ? "jp" : series.original_language === "zh" ? "cn" : series.original_language === "ko" ? "kr" : series.original_language === "el" ? "gr" : series.original_language}`}></li>
                   <li>{series.vote_average}</li>
                 </ul>
