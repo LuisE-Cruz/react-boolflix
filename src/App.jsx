@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import axios from 'axios'
 
+
 function App() {
 
   const API_KEY = import.meta.env.VITE_API_KEY
@@ -38,7 +39,7 @@ function App() {
                   <ul key={movie.id}>
                     <li>{movie.title}</li>
                     <li>{movie.original_title}</li>
-                    <li>{movie.original_language}</li>
+                    <li className={`fi fi-${movie.original_language === "en" ? "gb" : movie.original_language === "ja" ? "jp" : movie.original_language === "zh" ? "cn" : movie.original_language}`}></li>
                     <li>{movie.vote_average}</li>
                   </ul>
                 ))
