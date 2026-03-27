@@ -63,7 +63,7 @@ function App() {
               <ul key={movie.id}>
                 <li>{movie.original_title}</li>
                 <li>{movie.title}</li>
-                <li><img src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`} alt={movie.original_title} /></li>
+                <li><img src={movie.poster_path ? `https://image.tmdb.org/t/p/w342/${movie.poster_path}` : 'https://placehold.co/342x513/png?text=Poster+Non+Disponibile'} alt={movie.original_title} /></li>
                 <li className={`fi fi-${ogLanguageToFlag[movie.original_language] || movie.original_language}`}></li>
                 <li>{starsVote(movie.vote_average)}</li>
               </ul>
@@ -75,7 +75,7 @@ function App() {
               <ul key={series.id}>
                 <li>{series.original_name}</li>
                 <li>{series.name}</li>
-                <li><img src={`https://image.tmdb.org/t/p/w342/${series.poster_path}`} alt={series.original_title} /></li>
+                <li><img src={series.poster_path ? `https://image.tmdb.org/t/p/w342/${series.poster_path}` : 'https://placehold.co/342x513/png?text=Poster+Non+Disponibile'} alt={series.original_title} /></li>
                 <li className={`fi fi-${ogLanguageToFlag[series.original_language] || series.original_language}`}></li>
                 <li>{starsVote(series.vote_average)}</li>
               </ul>
